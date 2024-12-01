@@ -1,101 +1,128 @@
-import Image from "next/image";
+import React from 'react';
 
-export default function Home() {
+const LandingPage: React.FC = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+      {/* Header */}
+      <header className="bg-white shadow-md">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-blue-600">MindCare</h1>
+          <nav>
+            <a
+              href="#features"
+              className="text-gray-700 hover:text-blue-600 px-4"
+            >
+              Features
+            </a>
+            <a
+              href="#testimonials"
+              className="text-gray-700 hover:text-blue-600 px-4"
+            >
+              Testimonials
+            </a>
+            <a
+              href="#contact"
+              className="text-gray-700 hover:text-blue-600 px-4"
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Hero Section */}
+      <main className="flex-grow container mx-auto px-6 py-16 text-center">
+        <h2 className="text-4xl font-extrabold text-blue-900">
+          Online Psychiatry, Completely Anonymous
+        </h2>
+        <p className="mt-4 text-lg text-gray-700">
+          Take control of your mental well-being without revealing your identity.
+          Safe, secure, and private.
+        </p>
+        <div className="mt-6">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/get-started"
+            className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Get Started
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Features Section */}
+      <section id="features" className="py-16 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <h3 className="text-2xl font-bold text-blue-800 text-center">
+            Why Choose MindCare?
+          </h3>
+          <div className="mt-8 grid md:grid-cols-3 gap-8">
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h4 className="text-lg font-semibold text-blue-600">Complete Anonymity</h4>
+              <p className="mt-2 text-gray-700">
+                No personal details required. Stay secure and anonymous throughout your journey.
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h4 className="text-lg font-semibold text-blue-600">Expert Practitioners</h4>
+              <p className="mt-2 text-gray-700">
+                Work with licensed psychiatrists and therapists who are here to help.
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h4 className="text-lg font-semibold text-blue-600">Accessible Anywhere</h4>
+              <p className="mt-2 text-gray-700">
+                Secure communication available on any device, anywhere in the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <h3 className="text-2xl font-bold text-blue-800 text-center">
+            What Our Users Say
+          </h3>
+          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gray-50 shadow-md rounded-lg p-6">
+              <p className="italic text-gray-700">
+                "MindCare has been life-changing. The anonymity made me feel
+                comfortable seeking help."
+              </p>
+              <h4 className="mt-4 text-blue-600 font-semibold">- Anonymous User</h4>
+            </div>
+            <div className="bg-gray-50 shadow-md rounded-lg p-6">
+              <p className="italic text-gray-700">
+                "The experts here are professional and understanding. Highly
+                recommended!"
+              </p>
+              <h4 className="mt-4 text-blue-600 font-semibold">- Jane D.</h4>
+            </div>
+            <div className="bg-gray-50 shadow-md rounded-lg p-6">
+              <p className="italic text-gray-700">
+                "Being anonymous while talking about my struggles was a relief.
+                Thank you, MindCare."
+              </p>
+              <h4 className="mt-4 text-blue-600 font-semibold">- Alex R.</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white py-6 mt-auto">
+        <div className="container mx-auto px-6 text-center">
+          <p>&copy; 2024 MindCare. All rights reserved.</p>
+          <p>
+            <a href="#contact" className="text-blue-400 underline">
+              Contact Us
+            </a>
+          </p>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
+export default LandingPage;
