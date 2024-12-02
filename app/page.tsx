@@ -6,7 +6,7 @@ const LandingPage: React.FC = () => {
       {/* Header */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">MindCare</h1>
+          <h1 className="text-2xl font-bold text-blue-600">Revively</h1>
           <nav>
             <a
               href="#features"

@@ -55,7 +55,7 @@ const DiscussionPage: React.FC = () => {
             <a href="/" className="text-gray-700 hover:text-blue-600 px-4">
               Home
             </a>
-            <a href="/schedule" className="text-gray-700 hover:text-blue-600 px-4">
+            <a href="/daySchedule" className="text-gray-700 hover:text-blue-600 px-4">
               Schedule
             </a>
           </nav>
