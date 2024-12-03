@@ -2,6 +2,11 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { Prisma,PrismaClient } from "@prisma/client";
+
+
+const prisma = new PrismaClient();
+
 const GetStartedPage: React.FC = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -14,14 +19,33 @@ const GetStartedPage: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Add your validation or API call logic here
-
-    // Redirect to /dashboard
-    router.push("/dashboard");
+  
+    try {
+      const response = await fetch("/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+  
+      const result = await response.json();
+      if (result.success) {
+        router.push("/dashboard");
+      } else {
+        console.error("Error:", result.error);
+        alert("Error creating account. Please try again.");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
+  
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
