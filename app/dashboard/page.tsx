@@ -23,7 +23,7 @@ const DashboardPage: React.FC = () => {
           Welcome to Your Dashboard
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <Link href="/discussion">
+        <Link href="/discussion">
             <div className="block bg-white p-6 rounded-lg shadow-md text-center hover:bg-blue-50 cursor-pointer">
               <h3 className="text-xl font-bold text-blue-700">Discussions</h3>
               <p className="text-gray-600">Join the community discussions.</p>
